@@ -24,13 +24,27 @@ Deploys for free on Vercel + Firebase.
 4. Go to **Project Settings** (gear icon) → **General** tab
    - Scroll to "Your apps" → click the **</>** (web) icon
    - Register the app (any nickname) — you'll get a config object like:
-     ```js
-     apiKey: "AIza...",
-     authDomain: "your-project.firebaseapp.com",
-     projectId: "your-project",
-     ...
-     ```
-   - Copy these values — you'll need them for `.env.local`
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBRTtQ6KnbGMnxDrTt9UuR-I036eKPP7Uk",
+  authDomain: "soccer-attendance-e8ae5.firebaseapp.com",
+  projectId: "soccer-attendance-e8ae5",
+  storageBucket: "soccer-attendance-e8ae5.firebasestorage.app",
+  messagingSenderId: "958663286597",
+  appId: "1:958663286597:web:c6b7606dd6531533c4e82c",
+  measurementId: "G-JKPKG8DR6N"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 5. Go to **Project Settings** → **Service accounts** tab
    - Click **Generate new private key** → confirm → a JSON file downloads
